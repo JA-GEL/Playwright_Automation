@@ -25,7 +25,7 @@ test('Login Sucessfully', async ({ page }) => {
   await page.fill('#postal-code', '1111');
   await page.click('#continue');
 
-  // 6. Finish Order
+  // 6. Order Confirmation
   await expect(page.locator('.summary_subtotal_label')).toContainText('9.99');
   await page.click('#finish');
 
@@ -84,11 +84,11 @@ test('Negative Case: Invalid Login', async ({ page }) => {
   await page.fill('#postal-code', '1111');
   await page.click('#continue');
 
-  // 6. Finish Order
+  // 6. Order Confirmation
   await expect(page.locator('.shopping_cart_badge')).toHaveText('0');
   await page.click('#finish');
 
-  // 7. Verify Error Message
+  // 7. Verify Error Message 
   await expect(page.locator('.complete-header')).toHaveText('Order Failed');
 
 });
