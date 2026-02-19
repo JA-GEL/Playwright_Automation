@@ -37,6 +37,16 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  const config = {
+    reporter: [
+        ['list'],
+        ['html']
+    ],
+};
+
+
+module.exports = config;
+
   /* Configure projects for major browsers */
   projects: [
     {
